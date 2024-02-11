@@ -2,6 +2,7 @@
 //Console.WriteLine("Hello, World!");
 // variables --> camelCase
 using Intro.Business;
+using Intro.DataAccess.Concretes;
 using Intro.Entities;
 
 string message1 = "krediler";
@@ -57,13 +58,13 @@ for (int i = 0; i < courses.Length; i++)
 }
 
 Console.WriteLine("*****************************************");
+                                       //EfCourseDal
+CourseManager courseManager = new(new CourseDal());
 
-CourseManager courseManager = new();
-courseManager.GetAll();
 
-Course[] courses2 = courseManager.GetAll();
+List<Course> courses2 = courseManager.GetAll();
 
-for (int i = 0; i < courses2.Length; i++)
+for (int i = 0; i < courses2.Count; i++)
 {
     Console.WriteLine(courses2[i].Name + "/" + courses2[i].Price);
 }
@@ -119,7 +120,10 @@ BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
 foreach(BaseCustomer customer in customers)
 {
    
-    Console.WriteLine(customer.CustomerNumber); 
+    Console.WriteLine(customer.CustomerNumber);
 }
+
+
+
 
 
