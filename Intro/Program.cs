@@ -70,5 +70,56 @@ for (int i = 0; i < courses2.Length; i++)
 
 Console.WriteLine("kod bitti");
 
+IndividualCustomer customer1 = new IndividualCustomer();
+customer1.Id = 1;
+customer1.NationalIdentity = "12345678921";
+customer1.FirstName = "Aslı";
+customer1.LastName = "Karayiğit";
+customer1.CustomerNumber = "123456";
+
+IndividualCustomer customer2 = new IndividualCustomer();
+customer2.Id = 2;
+customer2.NationalIdentity = "12345674561";
+customer2.FirstName = "Özgür";
+customer2.LastName = "Atılgan";
+customer2.CustomerNumber = "123457";
+
+CorporateCustomer customer3 = new CorporateCustomer();
+customer3.Id = 3;
+customer3.Name = "Kodlamaio";
+customer3.CustomerNumber = "123433";
+customer3.TaxNumber = "2345689011";
+
+CorporateCustomer customer4 = new CorporateCustomer();
+customer4.Id = 4;
+customer4.Name = "Abc";
+customer4.CustomerNumber = "123990";
+customer4.TaxNumber = "2345689551";
+
+int number1 = 10;
+int number2 = 20;
+number1 = number2;
+number2 = 50;
+Console.WriteLine(number1);
+
+string[] cities1 = { "Ankara", "İstanbul", "İzmir" };
+string[] cities2 = { "Bursa", "Bolu", "Diyarbakır" };
+
+cities2=cities1;
+cities1[0] = "Adana";
+
+Console.WriteLine(cities2[0]);
+
+//value types int bool double
+// reference types array class interface
+
+                                 //101      102       103          104
+BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
+//polymorphism
+foreach(BaseCustomer customer in customers)
+{
+   
+    Console.WriteLine(customer.CustomerNumber); 
+}
 
 
